@@ -1,7 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { FlightService } from './flight.service';
-import { FlightJourneyDto } from './dto/flight-journey.dto';
 
 @ApiTags('Flight services')
 @Controller('flight')
