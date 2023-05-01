@@ -20,6 +20,9 @@ export class FlightService {
 
     async getJourney(data: object) {
 
+        const currency = data['currency'];
+        const value = currency === 'usd' ? 1 : currency === 'eur' ? 0.91 : 4708
+
         const response: Response = {
             response: false,
             data: [],
@@ -47,7 +50,7 @@ export class FlightService {
                     return {
                         origin: flight['departureStation'],
                         destination: flight['arrivalStation'],
-                        price: flight['price'],
+                        price: flight['price'] * value,
                         transport: {
                             flightCarrier: flight['flightCarrier'],
                             flightNumber: flight['flightNumber']

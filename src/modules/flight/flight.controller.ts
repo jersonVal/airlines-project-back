@@ -7,7 +7,7 @@ import { FlightService } from './flight.service';
 export class FlightController {
   constructor(private readonly flightService: FlightService) {}
 
-  @Get('journey/:origin/:destination')
+  @Get('journey/:origin/:destination/:currency')
   createRes(@Param() data: object ) {
     return this.flightService.getJourney(data);
   }
